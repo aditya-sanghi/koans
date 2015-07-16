@@ -84,4 +84,11 @@ class AboutConstants < Neo::Koan
   # QUESTION: Now which has precedence: The constant in the lexical
   # scope, or the constant from the inheritance hierarchy?  Why is it
   # different than the previous answer?
+
+  #ANSWER: When you define MyAnimals::Oyster you are still in the global scope, so ruby has no knowledge
+  # of the LEGS value set to 2 in MyAnimals because you never actually are in the scope of MyAnimals (a little counterintuitive).
+  #The difference is that in the code above, by the time you define Oyster,
+  # you have dropped into the scope of MyAnimals, so ruby knows that LEGS refers to MyAnimals::LEGS (2) and not Animal::LEGS (4).
+
+  #
 end
