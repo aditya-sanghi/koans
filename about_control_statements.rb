@@ -104,11 +104,11 @@ class AboutControlStatements < Neo::Koan
   def test_break_statement_returns_values
     i = 1
     result = while i <= 10
-      break i if i % 2 == 0
+      break i if i % 2 == 0 #returns i to result when break condition is met
       i += 1
     end
 
-    assert_equal __, result
+    assert_equal 2, result
   end
 
   def test_next_statement
